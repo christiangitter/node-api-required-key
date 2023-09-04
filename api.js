@@ -8,6 +8,25 @@ const port = 3000;
 
 app.use(bodyParser.json());
 
+const array = [
+    {
+        "id": 1,
+        "name": "John",
+        "age": 23
+    },
+    {
+        "id": 2,
+        "name": "Smith",
+        "age": 25
+    },
+    {
+        "id": 3,
+        "name": "Jane",
+        "age": 21
+    }
+];
+
+
 
 // Define a POST route that expects a 'password' key in the request body
 app.post('/', (req, res) => {
@@ -27,7 +46,7 @@ app.post('/', (req, res) => {
     }
 
     // For demonstration, we'll just respond with a success message
-    res.json({ message: 'Login request received successfully' });
+    res.json(array);
 });
 
 
