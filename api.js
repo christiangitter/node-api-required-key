@@ -45,7 +45,7 @@ app.post('/', (req, res) => {
         return res.status(401).json({ error: 'Invalid key' });
     }
 
-    // For demonstration, we'll just respond with a success message
+    // For demonstration we show a dummy data array
     res.json(array);
 });
 
