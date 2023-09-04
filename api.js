@@ -49,6 +49,11 @@ app.post('/', (req, res) => {
     res.json(array);
 });
 
+// Define a GET route that doesn't require a key
+app.get('/health', (req, res) => {
+    res.json({ status: 'HEALTHY' });
+});
+
 
 app.listen(port, () => {
     console.log(`API is running on port ${port}`);
