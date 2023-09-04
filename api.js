@@ -19,7 +19,7 @@ app.post('/', (req, res) => {
 
     // Access the 'password' key in the request body
     const key = req.body.key;
-    console.log(`The key sent is "${key}"`);
+    //console.log(`The key sent is "${key}"`);
 
     // Now you can validate or use the password as needed
     if (key !== process.env.API_KEY) {
