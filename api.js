@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -20,7 +22,9 @@ app.post('/', (req, res) => {
     console.log(`The key sent is "${key}"`);
 
     // Now you can validate or use the password as needed
-    // Replace this with your actual password validation logic
+    if (key !== process.env.API_KEY) {
+        return res.status(401).json({ error: 'Invalid key' });
+    }
 
     // For demonstration, we'll just respond with a success message
     res.json({ message: 'Login request received successfully' });
